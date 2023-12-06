@@ -1,0 +1,51 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="container">
+    
+    <div class="container">  
+        <div class ="row">
+          <div class="col">
+            <h1 class="text-center mt-4">Welcome to the Double Room</h1>
+            <p>The double room is the best choice for everyone that wants to...</p>
+          </div>
+        </div>
+  
+        <div class ="row">
+          <div class="col text-center">
+            <a id="check-availability-button" href="#" class="btn btn-success">Make reservation now</a>
+          </div>
+        </div>
+  
+      </div>
+</div>
+
+
+{{end}}
+
+{{define "js"}}
+<script>
+        document
+        .getElementById("check-availability-button")
+        .addEventListener("click", function () {
+          let html = `
+          <form id="check-availability-form" action="" method="post" novalidate class="needs-validation">
+            <div class="form-row">
+              <div class="col">
+                <div class="form-row" id="reservation-dates-modal">
+                  <div class="col">
+                    <input disabled required class="form-control" type="text" name="start" id="start" placeholder="Arrival">
+                  </div>
+                  <br>
+                  <div class="col">
+                    <input disabled required class="form-control" type="text" name="end" id="end" placeholder="Departure">
+                  </div> 
+                </div>
+              </div>
+            </div>   
+          </form>
+          `;
+          attention.custom({ msg: html, title: "Choose your dates" });
+        });
+</script>
+{{end}}

@@ -1,0 +1,39 @@
+.my-footer {
+    height: 5em;
+    padding: 1em;
+    background-color: cornflowerblue;
+    margin-top: 1.5em;
+    font-size: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  .room-image {
+    max-width: 50%;
+  }
+
+  .notie-container {
+    box-shadow: none;
+  }
+
+  .datepicker {
+    z-index: 1000;
+  }
+
+  .room-image {
+    max-width: 50%;
+  }
+
+  .redText {
+    color: red;
+  }
+
+  body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+  }

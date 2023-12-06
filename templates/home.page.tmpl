@@ -1,7 +1,53 @@
 {{template "base" .}}
 
 {{define "content"}}
-    <h1>This is the Home page</h1>
-    <p>This is some text</p>
+<!--Carousel component-->
+<div id="main-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/images/house-forest1.jpg" class="d-block w-100" alt="..." class="img-fluid">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item active">
+      <img src="/static/images/house-forest2.jpeg" class="d-block w-100" alt="..." class="img-fluid">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#main-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#main-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container">  
+  <div class ="row">
+    <div class="col">
+      <h1 class="text-center mt-4">Welcome to the Goat Inn</h1>
+      <p>Are you looking for a weekend in the nature, or simply a staycation. Then you are at the right place!</p>
+    </div>
+  </div>
+  <div class ="row">
+    <div class="col text-center">
+      <a href="/check-dates" class="btn btn-success">Make reservation now</a>
+    </div>
+  </div>
+
+
+</div>
 {{end}}
 

@@ -48,10 +48,22 @@ func (m *Repository) HomeTmpl(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "home.page.tmpl", &models.TemplateData{})
 }
 
-func (m *Repository) PersonalDetailsTmpl(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, "personaldetails.page.tmpl", &models.TemplateData{})
+func (m *Repository) SingleRoom(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "singleroom.page.tmpl", &models.TemplateData{})
 }
 
-func (m *Repository) PersonalDetailsDisplayTmpl(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, "personaldetailsdisplay.page.tmpl", &models.TemplateData{})
+func (m *Repository) DoubleRoom(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "doubleroom.page.tmpl", &models.TemplateData{})
+}
+
+func (m *Repository) CheckDates(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "checkdates.page.tmpl", &models.TemplateData{})
+}
+
+func (m *Repository) MakeReservation(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "makereservation.page.tmpl", &models.TemplateData{})
+}
+
+func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "contact.page.tmpl", &models.TemplateData{})
 }

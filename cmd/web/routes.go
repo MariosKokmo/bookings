@@ -11,10 +11,6 @@ import (
 )
 
 func routes(app *config.AppConfig) http.Handler {
-	//mux := pat.New()
-
-	//mux.Get("/", http.HandlerFunc(handlers.Repo.HomeTmpl))
-	//mux.Get("/about", http.HandlerFunc(handlers.Repo.AboutTmpl))
 
 	mux := chi.NewRouter()
 
@@ -24,8 +20,13 @@ func routes(app *config.AppConfig) http.Handler {
 
 	mux.Get("/", handlers.Repo.HomeTmpl)
 	mux.Get("/about", handlers.Repo.AboutTmpl)
-	mux.Get("/personal", handlers.Repo.PersonalDetailsTmpl)
-	mux.Get("/personaldetailsDisplay", handlers.Repo.PersonalDetailsDisplayTmpl)
+	mux.Get("/singleroom", handlers.Repo.SingleRoom)
+	mux.Get("/doubleroom", handlers.Repo.DoubleRoom)
+	mux.Get("/check-dates", handlers.Repo.CheckDates)
+	mux.Get("/make-reservation", handlers.Repo.MakeReservation)
+	mux.Get("/contact", handlers.Repo.Contact)
 
+	fileServer := http.FileServer(http.Dir("./static/"))
+	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 	return mux
 }
