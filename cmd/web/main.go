@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/MariosKokmo/bookings/pkg/config"
-	"github.com/MariosKokmo/bookings/pkg/handlers"
-	"github.com/MariosKokmo/bookings/pkg/render"
+	"github.com/MariosKokmo/bookings/internal/config"
+	"github.com/MariosKokmo/bookings/internal/handlers"
+	"github.com/MariosKokmo/bookings/internal/render"
 
 	"github.com/alexedwards/scs/v2"
 )
@@ -43,7 +43,7 @@ func main() {
 
 	render.NewTemplates(&app)
 
-	fmt.Printf(fmt.Sprintf("Starting application on port %s", portNumber))
+	fmt.Printf(fmt.Sprintf("Starting application on port %s\n", portNumber))
 
 	srv := &http.Server{
 		Addr:    portNumber,

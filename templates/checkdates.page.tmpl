@@ -9,11 +9,12 @@
                 <h1 class="mt-5">Search for availability</h1>
 
                 <form
-                    action="/make-reservation"
-                    method="GET"
+                    action="/check-dates"
+                    method="post"
                     novalidate
                     class="needs-validation"
                     >
+                    <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
                     <div class="form-row">
                         <div class="col">
                             <div class="form-row" id="reservation-dates">
