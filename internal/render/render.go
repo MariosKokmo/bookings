@@ -14,7 +14,7 @@ import (
 )
 
 var app *config.AppConfig
-
+var pathToTemplates = "./templates"
 func NewTemplates(a *config.AppConfig) {
 	app = a
 }
@@ -64,7 +64,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	myCache := map[string]*template.Template{}
 	// populate all at once named *.page.tmpl
 	// get all of the files that end in *.page.tmpl from ./templates
-	pages, err := filepath.Glob("./templates/*.page.tmpl")
+	pages, err := filepath.Glob(fmt.Sprintf("%s/*.page.tmpl", pathToTemplates))
 	if err != nil {
 		return myCache, err
 	}
@@ -78,14 +78,14 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 		}
 
 		// look if any layouts exist in the directory
-		matches, err := filepath.Glob("./templates/*.layout.tmpl")
+		matches, err := filepath.Glob(fmt.Sprintf("%s/*.layout.tmpl", pathToTemplates))
 		if err != nil {
 			fmt.Println("No templates found")
 			return myCache, err
 		}
 
 		if len(matches) > 0 {
-			ts, err = ts.ParseGlob("./templates/*.layout.tmpl")
+			ts, err = ts.ParseGlob(fmt.Sprintf("%s/*.layout.tmpl", pathToTemplates))
 			if err != nil {
 				return myCache, err
 			}
